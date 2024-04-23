@@ -5,9 +5,9 @@
 <main role="main">
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3 mt-3">Gestion des employés et des départements</h1>
-      <p>Le projet consiste en une application web de gestion des employés et des départements au sein d'une organisation. L'objectif principal est de fournir une plateforme centralisée permettant aux administrateurs de gérer facilement les informations sur les employés et les départements, y compris leur ajout, leur modification et leur suppression</p>
-    </div>
+      <h1 class="display-3 mt-3">Bibliotheque</h1>
+      <p>
+        Le projet de bibliothèque est une application web conçue pour gérer les informations relatives aux livres dans une bibliothèque. Cette application permet aux utilisateurs de consulter, ajouter, modifier et supprimer des livres</p></div>
   </div>
   <br>
   <hr>
@@ -16,13 +16,7 @@
     <h3 class="text-center">L'application comprend plusieurs fonctionnalités clés, notamment :</h3>
     <div class="row g-2">
       <div class="col-6">
-        <div class="p-3"><p><b>Gestion des Employés : </b>Permet aux administrateurs d'ajouter de nouveaux employés, de mettre à jour leurs informations telles que leur nom, prénom, date de naissance, sexe, adresse email, numéro de téléphone, adresse, poste, département, salaire, date de début de travail, etc. Les employés peuvent être consultés, modifiés ou supprimés individuellement.</p></div>
-      </div>
-      <div class="col-6">
-        <div class="p-3"><p><b>Gestion des Départements :  </b> Permet aux administrateurs d'ajouter de nouveaux départements, de définir leur nom, leur code et leur description. Les départements peuvent également être consultés, modifiés ou supprimés individuellement.</p></div>
-      </div>
-      <div class="col-6">
-        <div class="p-3"><p><b>Autorisations et Contrôles d'Accès :</b> Les autorisations sont configurées pour permettre uniquement aux administrateurs d'accéder aux fonctionnalités de gestion des employés et des départements. Les utilisateurs standard ont un accès restreint et ne peuvent pas effectuer de modifications importantes.</p></div>
+        <div class="p-3"><p><b>Les livres </b>Permet aux administrateurs d'ajouter de nouveaux livres, de mettre à jour leurs informations </p></div>
       </div>
       <div class="col-6">
         <div class="p-3"><p><b>Interface d'Administration :</b> Les administrateurs ont accès à une interface d'administration dédiée qui leur permet de gérer tous les aspects de l'application, y compris les utilisateurs, les groupes, les autorisations, etc.</p></div>
@@ -34,38 +28,29 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="card text-white bg-secondary m-3 " style="max-width: 20rem;">
-        <div class="card-header">Tous les employés</div>
+        <div class="card-header"> Consulter </div>
         <div class="card-body">
-          <h4 class="card-title">Gestion des employés</h4>
-          <p class="card-text">Consultez la liste complète de tous les employés enregistrés dans notre système.</p>
+          <h4 class="card-title">Les employés</h4>
+          <p class="card-text">Consultez la liste complète de tous les livres dans notre bibliothèque.</p>
+          <p><a class="btn btn-light" href="{% url 'liste-livre'%}" role="button">Voir les livres &raquo;</a></p>
+       
            </div>
       </div>
       <div class="card text-white bg-secondary m-3" style="max-width: 20rem;">
-        <div class="card-header">Tous les départements</div>
+        <div class="card-header">Ajouter un livre </div>
         <div class="card-body">
-          <h4 class="card-title">Gestion des départements</h4>
-          <p class="card-text">Explorez la liste complète de tous les départements disponibles dans notre organisation.</p>
-         </div>
-      </div>
-      <div class="card text-white bg-secondary m-3" style="max-width: 20rem;">
-        <div class="card-header">Ajouter un employé</div>
-        <div class="card-body">
-          <h4 class="card-title">Nouvel employé</h4>
-          <p class="card-text">Ajoutez un nouvel employé à notre base de données.</p>
+          <h4 class="card-title">Nouveau Livre</h4>
+          <p class="card-text">Ajoutez un nouveau livre à notre base de données.</p>
+          <p><a class="btn btn-light" href="{% url 'ajouter-livre'%}" role="button">Ajouter un livre &raquo;</a></p>
+       
           </div>
-      </div>
-      <div class="card text-white bg-secondary m-3" style="max-width: 20rem;">
-        <div class="card-header">Ajouter un département</div>
-        <div class="card-body">
-          <h4 class="card-title">Nouveau département</h4>
-          <p class="card-text">Créez un nouveau département au sein de notre organisation.</p>
-           </div>
       </div>
       <div class="card text-white bg-secondary m-3" style="max-width: 20rem;">
         <div class="card-header">Admin</div>
         <div class="card-body">
           <h4 class="card-title">Interface administrateur</h4>
-          <p class="card-text">Accéder à l'interface administrateur pour la gestion des employés et départements.</p>
+          <p class="card-text">Accéder à l'interface administrateur pour la gestion de la bibliothèque</p>
+          <p><a class="btn btn-light" href="http://127.0.0.1:8000/admin/login/?next=/admin/" role="button">Admin &raquo;</a></p>
            </div>
       </div>
     </div>
