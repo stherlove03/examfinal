@@ -16,6 +16,12 @@
                 <span class="">
                     <a class="btn btn-outline-secondary btn-sm" href="{% url 'liste-livre' %}">Back</a>
                 </span>
+                <span class="">
+                    <a class="btn btn-outline-info btn-sm" href="{% url 'modifier-livre' livre.code %}">Update</a>
+                </span>
+                <span class="">
+                    <a class="btn btn-outline-danger btn-sm" href="{% url 'supprimer-livre' livre.code %}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce livre')">Supprimer</a>
+                </span>
             </div>
         </div>
         <hr>

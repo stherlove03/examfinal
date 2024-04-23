@@ -39,3 +39,8 @@ def modifier_livre(request, code):
         form.save()
         return redirect('liste-livre')
     return render(request, 'livre/modifier_livre.html', {'livre': livre, 'form': form})
+
+def supprimer_un_livre(request, code):
+    livre = Livre.objects.get(pk=code)
+    livre.delete()
+    return redirect('liste-livre')
