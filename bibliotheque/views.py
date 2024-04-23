@@ -13,7 +13,6 @@ def listelivre(request):
    livre = Livre.objects.all()
    return render(request, 'livre/liste_livre.html', {'livre': livre})
 
-<<<<<<< HEAD
 @csrf_protect
 
 def ajouter_livre(request):
@@ -28,8 +27,7 @@ def ajouter_livre(request):
        if 'submitted' in request.GET:
            submitted = True
    return render(request, 'livre/ajouter_un_livre.html', {'form':form, 'submitted':submitted})
-=======
+
 def afficher_un_livre(request, code):
     livre = Livre.objects.get(pk=code)
     return render(request, 'employe/afficher_un_livre.html', {'livre': livre})
->>>>>>> LireLesInformation
