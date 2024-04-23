@@ -31,3 +31,11 @@ def ajouter_livre(request):
 def afficher_un_livre(request, code):
     livre = Livre.objects.get(pk=code)
     return render(request, 'employe/afficher_un_livre.html', {'livre': livre})
+
+def modifier_livre(request, code):
+    livre= Livre.objects.get(pk=code)
+    form = LivreForm(request.POST or None, instance=livre)
+    if form.is_valid():
+        form.save()
+        return redirect('liste-livre')
+    return render(request, 'livre/modifier_livre.html', {'livre': livre, 'form': form})
