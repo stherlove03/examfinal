@@ -1,0 +1,24 @@
+{% extends 'livre/base.html' %}
+
+{%block content%}
+    <div class="container mt-3">
+        <!-- Example row of columns -->
+        <div class="row">        
+            <div class="col-md-4">
+                <h2>{{ livre.titre}}</h2>
+                <ul>
+                    <li> Titre: {{ livre.titre }} </li>
+                    <li>Auteur: {{ livre.auteur}} </li>
+                    <li>Année de Publication: {{ livre.annee_publication}} </li>
+                    <li>Genre: {{ livre.genre }} </li>
+                    
+                </ul>
+                <span class="">
+                    <a class="btn btn-outline-secondary btn-sm" href="{% url 'liste-livre' %}">Back</a>
+                </span>
+            </div>
+        </div>
+        <hr>
+      </div > 
+      
+{% endblock content %}

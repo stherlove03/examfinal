@@ -8,3 +8,7 @@ def home(request):
 def listelivre(request):
    livre = Livre.objects.all()
    return render(request, 'livre/liste_livre.html', {'livre': livre})
+
+def afficher_un_livre(request, code):
+    livre = Livre.objects.get(pk=code)
+    return render(request, 'employe/afficher_un_livre.html', {'livre': livre})
