@@ -16,7 +16,7 @@
             <tbody>
             {% for liste in livre %}
                 <tr>
-                    <th scope="row"><a href="{ url 'un-livre' liste.code %}">{{liste.code}}</a></th>
+                  <th scope="row"><a href="{% url 'un-livre' liste.code %}" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ liste.code}}</a></th>
                     <th scope="row">{{liste.titre}}</th>
                     <td><a >{{liste.auteur}}</a></td>
                     <td><a>{{liste.annee_publication}}</a></td>
