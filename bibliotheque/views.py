@@ -30,7 +30,7 @@ def ajouter_livre(request):
 
 def afficher_un_livre(request, code):
     livre = Livre.objects.get(pk=code)
-    return render(request, 'employe/afficher_un_livre.html', {'livre': livre})
+    return render(request, 'livre/afficher_un_livre.html', {'livre': livre})
 
 def modifier_livre(request, code):
     livre= Livre.objects.get(pk=code)
