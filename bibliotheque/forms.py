@@ -5,8 +5,9 @@ from .models import Livre
 class LivreForm(ModelForm):
     class Meta:
         model = Livre
-        fields = ('titre','auteur','annee_publication', 'genre')
+        fields = ('code','titre','auteur','annee_publication', 'genre')
         labels = {
+           'code': '',
            'titre': '',
            'auteur': '',
            'annee_publication': '',
@@ -14,6 +15,7 @@ class LivreForm(ModelForm):
         }
        # Widgets nous permettra de styliser notre forme avec Bootstrap
         widgets={
+            'code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Code'}),
             'titre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Titre'}),
             'auteur': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Auteur'}),
             'annee_publication': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Année de Publication'}),
