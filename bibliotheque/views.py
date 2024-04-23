@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from .models import Livre
+from django.views.decorators.csrf import csrf_protect
+from .forms import LivreForm
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 # Create your views here.
 
 def home(request):
@@ -8,3 +12,18 @@ def home(request):
 def listelivre(request):
    livre = Livre.objects.all()
    return render(request, 'livre/liste_livre.html', {'livre': livre})
+
+@csrf_protect
+
+def ajouter_livre(request):
+   submitted = False
+   if request.method == 'POST':
+       form = LivreForm(request.POST)
+       if form.is_valid():
+           form.save()
+           return HttpResponseRedirect('/ajouter_livre?submitted=True')
+   else:
+       form = LivreForm()
+       if 'submitted' in request.GET:
+           submitted = True
+   return render(request, 'livre/ajouter_un_livre.html', {'form':form, 'submitted':submitted})
