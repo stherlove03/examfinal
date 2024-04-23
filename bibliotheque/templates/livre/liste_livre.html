@@ -6,6 +6,7 @@
         <table class="table table-hover ">
             <thead>
               <tr>
+                <th scope="col">Code</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Auteur</th>
                 <th scope="col">Annee de Publication</th>
@@ -15,6 +16,7 @@
             <tbody>
             {% for liste in livre %}
                 <tr>
+                   <th scope="row">{{liste.code}}</th>
                     <th scope="row">{{liste.titre}}</th>
                     <td><a >{{liste.auteur}}</a></td>
                     <td><a>{{liste.annee_publication}}</a></td>
