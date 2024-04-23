@@ -1,0 +1,29 @@
+{% extends 'livre/base.html' %}
+
+{% block content %}
+      <div class="container-fluid">
+        <div class="display-6 py-4 text-center"><h1>Liste des Livres</h1></div>
+        <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Auteur</th>
+                <th scope="col">Annee de Publication</th>
+                <th scope="col">Genre</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for liste in livre %}
+                <tr>
+                    <th scope="row">{{liste.titre}}</th>
+                    <td><a >{{liste.auteur}}</a></td>
+                    <td><a>{{liste.annee_publication}}</a></td>
+                    <td>{{liste.genre}}</td>
+                    <!--<a href="{% url 'un-employe' liste.cin %}" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"></a>-->
+                </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+      </div>
+
+{% endblock content %}
